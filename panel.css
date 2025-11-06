@@ -1,99 +1,198 @@
-/* =========================================================
-    ESTILOS ESPECIFICOS PARA EL PANEL ADMINISTRATIVO 
-  ========================================================= */
+/* ==========================================================
+   PANEL ADMINISTRATIVO MODERNO - MESEROS JYS
+   ========================================================== */
+
+:root {
+    --fondo: #f6f7fb;
+    --sidebar: #1e1f26;
+    --texto: #333;
+    --blanco: #fff;
+    --principal: #f0b10a;
+    --rojo: #e63946;
+    --transition: 0.3s ease;
+}
 
 body {
-    background-color: var(--blanco-claro-color);
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
 }
 
-/* Header del Panel ( Barra Superior Del Admin ) */
-.panel-header {
+/* ====== LAYOUT ====== */
+.panel-container {
     display: flex;
+    min-height: 100vh;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+    width: 250px;
+    background: var(--sidebar);
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    transition: transform var(--transition);
+}
+
+.sidebar .logo h2 {
+    font-size: 1.4rem;
+    color: var(--principal);
+    margin-bottom: 40px;
+}
+.sidebar .logo span { color: var(--blanco); }
+
+.menu a {
+    display: flex;
     align-items: center;
-    background-color: var(--segundo-color);
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: var(--transition);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+.menu a i {
+    margin-right: 10px;
+    width: 18px;
+    text-align: center;
+}
+.menu a:hover,
+.menu a.active {
+    background: var(--principal);
+    color: var(--sidebar);
+    font-weight: 600;
+}
+
+.btn-logout {
+    background: var(--rojo);
+    border: none;
+    color: var(--blanco);
     padding: 10px;
-    border-radius: 8px;
-    color: var(--blanco-claro-color);
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+.btn-logout:hover { background: #c71f2d; }
+
+/* ====== CONTENIDO PRINCIPAL ====== */
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 20px 25px;
+    transition: var(--transition);
 }
 
-.panel-header h1 {
-    color:  var(--primer-color);
-    font-size: 1.8rem;
-}
-
-
-/* Sesion Principal del Panel */
-.panel-main {
-    background-color: white;
-    margin-top: 180px;
-    padding: 30px;
+/* Topbar */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--blanco);
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-/* Tabla de Reservas Con SCROLL HORIZONTAL */
-.tabla-reservas {
-    margin-top: 30px;
-    overflow-x: auto; /* Permite Scroll Horizontal en MOVIL ( CELULARES ). */
+.topbar h1 {
+    font-size: 1.3rem;
+    margin: 0;
 }
 
+.toggle-menu {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--sidebar);
+    cursor: pointer;
+    display: none;
+}
 
-/* --------------------------------------------------------------------------------------------------------- 
-  <table> es el contenedor principal de una tabla en HTML. Dentro de ella se colocan otras etiquetas como:
-------------------------------------------------------------------------------------------------------------
-    - <thead> → encabezado.
-    - <tbody> → cuerpo.
-    - <tfoot> → pie de tabla.
-    - <tr> → filas.
-    - <th> → celdas de encabezado.
-    - <td> → celdas de datos. 
------------------------------------------------------------------------------------------------------------*/
+/* ====== SECCIÓN DE TABLA ====== */
+.dashboard-section {
+    margin-top: 25px;
+    background: var(--blanco);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.dashboard-section h2 {
+    color: var(--sidebar);
+    margin-top: 0;
+}
+
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
 table {
-    width: 100%; /* Hace que la tabla ocupe todo el ancho disponible del contenedor padre */
-    border-collapse: collapse; /* Combina los bordes de las celdas adyacentes en uno solo para evitar espacios entre ellos */
-    font-size: 0.95rem; /* Define el tamaño del texto dentro de la tabla, ligeramente menor al tamaño base del documento */
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
 }
 
-/*  <thead> → Encabezado (donde van los títulos de las columnas */
 thead {
-    background-color: var(--segundo-color);
-    color: var(--blanco-claro-color);
+    background: var(--sidebar);
+    color: var(--blanco);
 }
-
 th, td {
-    padding: 12px 15px;
+    padding: 10px 14px;
+    border-bottom: 1px solid #ddd;
     text-align: left;
-    border-bottom: 1px solid var(--gris-claro-color);
 }
-
 tbody tr:hover {
-    background-color: #f3f3f3;
+    background: #f3f3f3;
 }
-
-/* Boton Eliminar Desde el DOM */
 .btn-eliminar {
-    background-color: #e63946;
-    color: white;
-    padding: 6px 12px;
+    background: var(--rojo);
+    color: #fff;
+    padding: 6px 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: var(--transition);
 }
+.btn-eliminar:hover { background: #c71f2d; }
 
-.btn-eliminar:hover {
-    background-color: #c71f2d;
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    .toggle-menu {
+        display: block;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        z-index: 20;
+    }
+    .sidebar.show {
+        transform: translateX(0);
+    }
 }
 
-/* RESPONSIVIDAD DEL PANEL CUANDO ALCANZA ESTE RANGO DE PANTALLA */
-@media(max-width: 768px) {
-    .panel-header {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+/* Ajustes en pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .dashboard-section {
+        padding: 15px;
     }
-
     table {
         font-size: 0.85rem;
     }
