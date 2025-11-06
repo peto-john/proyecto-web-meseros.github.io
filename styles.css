@@ -1,0 +1,780 @@
+/* Variables En CSS */
+:root {
+    --primer-color: #d4af37;
+    --segundo-color: #1a1a1a;
+    --blanco-claro-color: #f8f8f8;
+    --negro-claro-color: #333;
+    --gris-color: #777;
+    --gris-claro-color: #eaeaea;
+    --fuente-primaria: 'Poppins', sans-serif;
+    --fuente-secundaria: 'Playfair Display', serif;
+    --transition: all 0.3s ease;
+}
+
+/* Resetea Los Estilos Base o Por Defecto de los Navegadores Web */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estlos Generales */
+body {
+    font-family: var(--fuente-primaria);
+    color: var(--negro-claro-color);
+    line-height: 1.6;  /* Aumenta el espacio vertical entre las líneas de texto a \(1.6\) veces el tamaño de la fuente */
+    overflow-x: hidden; /* Oculta cualquier contenido que se desborde horizontalmente, cortándolo y evitando la aparición de barras de desplazamiento horizontales */
+}
+
+/* Estlos Generales Para Los Contenedores --> ( <div class="contenedor"> ) */
+.contenedor {
+    width: 100%; /* Hace que el elemento ocupe todo el ancho disponible de su contenedor padre. */
+    max-width: 1200px; /* Establece un límite de ancho para el elemento. Nunca será más ancho que 1200 píxeles, pero puede ser más estrecho si el contenedor padre es más pequeño. */
+    margin: 0 auto; /* Esto realiza dos cosas: 1# Establece el margen superior e inferior en 0 (sin espacio). 2# Establece los márgenes izquierdo y derecho en auto, lo que centra el elemento horizontalmente en su contenedor padre. */
+    padding: 0 20px; /* Establece el relleno (espacio interno) del elemento. */
+}
+
+/* Estlos Generales Para Todas Estas Etiquetas --> ( " h1, h2, h3, h4 " ) */
+h1, h2, h3, h4 {
+    font-family: var(--fuente-secundaria); /* Se Usa Variable Para Asignar la Fuente Del Texto */
+    font-weight: 600; /* establecer el grosor de la fuente a un valor de "semi-negrita" o "semi-bold", creando un texto más grueso que el norma */
+}
+
+/* Estlos Generales Para Todas Las Etiquetas --> ( <a href="#inicio"> </a> Crea enlaces ) */
+a {
+    text-decoration: none; /*  elimina el subrayado de los enlaces */
+    color: inherit;        /*  hace que un elemento tome el color del texto de su elemento padre. */
+    transition: var(--transition); /* para crear transiciones suaves y automáticas entre dos estados de un elemento, como al pasar el ratón por encima. */
+}
+
+/* Estilos para Las Etiquetas (  <ul> </ul> */
+ul {
+    list-style: none; /* para eliminar los marcadores (como viñetas o números) de los elementos de lista */
+}
+
+/* Estilos Generales Para Todas Las Etiquetas de Imagenes ( <img src="..." alt="..."> ), donde (src) especifica la ruta del archivo y (alt) proporciona un texto alternativo que se muestra si la imagen no puede cargarse */
+img {
+    max-width: 100%;
+    height: auto; /* hace que la altura de un elemento se ajuste automáticamente para acomodar su contenido. */
+}
+
+/* Estilos Generales Para Todas Las Etiquetas de Botones ( <button type="submit"> Enviar </button> */
+.btn {
+    display: inline-block; /* combina lo mejor de dos mundos: coloca elementos uno al lado del otro (como inline) pero permite que se les aplique ancho, alto, relleno y margen (como block) */
+    padding: 12px 30px;    /*  crea un espacio de 12 píxeles arriba y abajo, y de 30 píxeles a la izquierda y a la derecha. */
+    background-color: var(--primer-color); /* se utiliza para establecer el color de fondo de un elemento */
+    color: var(--segundo-color); /* se usa para definir el color del texto dentro de ese elemento. */
+    border: none; /*  se utiliza para eliminar por completo cualquier borde */
+    border-radius: 4px; /* redondear las cuatro esquinas de un elemento con un radio de curvatura */
+    font-weight: 500;
+    text-transform: uppercase; /* convierte todo el texto a mayúsculas */
+    letter-spacing: 1px; /* añade un espacio de \(1\) píxel entre cada letra del texto */
+    cursor: pointer; /* cambia el cursor del ratón a una mano al pasar por encima del elemento, indicando que es interactivo */
+    transition: var(--transition);
+}
+
+/* ( pseudoclase ) que se utiliza para hacer que los elementos interactivos, como botones, cambien de apariencia. ejemplo, cambiando el color de fondo o el texto. */
+.btn:hover {
+    background-color: #c5a227;
+    transform: translateY(-3px); /*  significa que un elemento se desplazará 3 píxeles hacia arriba en el eje vertical (eje "y") */
+}
+
+/* Estilos Para Los Titulos De Seccion ( h2 ) Con Esta Classe */
+.seccion-titulo {
+    font-size: 2.5rem; /* establece el tamaño de la fuente en 2.5 veces el tamaño de fuente del elemento raíz (generalmente <html>) */
+    margin-bottom: 2rem; /*  significa que el margen inferior del elemento será un espacio de 2rem */
+    text-align: center; /* centra horizontalmente el contenido de texto dentro de su contenedor */
+    position: relative; /* posiciona el elemento en relación con su posición original en el flujo del documento, permitiendo moverlo con propiedades como top, left, right y bottom. */ 
+    color: var(--secondary-color);
+}
+
+/* pseudo-elemento ::after que Se usa para añadir contenido decorativo o estético, como iconos, comillas o subrayados, sin modificar el HTML, utilizando La propiedad ( content ). */
+.seccion-titulo::after {
+    content: '';    /*  genera un espacio vacío que se convierte en el objeto de este bloque. */
+    display: block; /*  hace que el elemento ocupe todo el ancho disponible y comience en una nueva línea */
+    width: 80px;
+    height: 4px;
+    background-color: var(--primer-color);
+    margin: 15px auto;
+}
+
+
+/*Estilos para el Header General */
+header {
+    position: fixed; /* Mantiene el elemento en un lugar fijo dentro de la ventana del navegador, sin importar si el usuario se desplaza por la página. */
+    top: 0;          /* Posiciona el borde superior del elemento a \(0\) píxeles del borde superior de la ventana del navegador. */
+    left: 0;         /* left: 0;: Posiciona el borde izquierdo del elemento a \(0\) píxeles del borde izquierdo de la ventana del navegad */
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(26, 26, 26, 0.9);
+    z-index: 1000;  /* significa que el elemento se apilará delante de otros elementos con un valor de z-index menor, o detrás de los que tengan un valor mayor. */
+    transition: var(--transition);
+}
+
+/*Estilos para el Header Y Su Clase Contenedor ( <div class="contenedor"> </div> ) */
+header .contenedor {
+    display: flex; /* convierte a un elemento en un contenedor flexible, lo que permite alinear y distribuir sus elementos internos de manera flexible a lo largo de un eje principal */
+    justify-content: space-between; /* distribuye el espacio sobrante entre los elementos hijos de forma uniforme, alineando el primer elemento al inicio del eje principal y el último elemento al final del mismo */
+    align-items: center; /* los elementos se alinean en el centro de su contenedor en la dirección vertical.  */
+}
+
+/* Estlos para La Parte de Navegacio de la Portada Con SCROL */
+header.scrolled {
+    padding: 15px 0;
+    background-color: rgba(66, 9, 9, 0.877);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* crea una sombra que no tiene desplazamiento horizontal, se desplaza $5$px hacia abajo y tiene un radio de desenfoque de $20$px */
+}
+
+
+/* Estlos para a El Logo de la Portada */
+.logo {
+    flex: 0 0 auto; /* es un atajo de CSS que establece el elemento como inflexible y hace que se base en sus propiedades width o height */
+}
+/* Estilo del Texto Del <div> con la Clase Logo con la Etiqueta h1 */
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--blanco-claro-color);
+}
+/* Estilo del Texto Del <div> con la Clase Logo con la Etiqueta Span */
+.logo span {
+    color: var(--primer-color);
+}
+
+/* Estlos para La Parte de Navegacio de la Portada */
+.nav-menu {
+    flex: 1; /* Es una propiedad abreviada que establece que cada elemento flex puede crecer (flex-grow) hasta el tamaño disponible */
+    display: flex; /* Activa el modelo de diseño flexible para el contenedor, haciendo que sus elementos hijos directos se conviertan en elementos "flex" */
+    justify-content: flex-end; /* Alinea los elementos flexibles al final del contenedor a lo largo del eje principal. Si hay espacio sobrante, se agrupará todo al lado derecho (o final según la dirección del eje principal). */
+}
+
+.nav-menu ul {
+    display: flex; /* Activa el modelo de diseño flexible para el contenedor, haciendo que sus elementos hijos directos se conviertan en elementos "flex" */
+}
+
+.nav-menu ul li {
+    margin-left: 30px; /* Esto significa que el elemento se separará de los otros elementos 30 píxeles hacia la derecha. */
+}
+
+.nav-menu ul li a {
+    color: var(--blanco-claro-color);
+    font-weight: 500; /* establecer el grosor de la fuente a un valor de "semi-negrita" o "semi-bold", creando un texto más grueso que el norma */
+    position: relative; /* /* posiciona el elemento en relación con su posición original en el flujo del documento, permitiendo moverlo con propiedades como top, left, right y bottom. */ 
+}
+
+/* Estolos De Dinamismo para la Linea de Los Enlaces ( <li><a href="#inicio">Inicio</a></li> ) */
+.nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primer-color);
+    bottom: -5px;
+    left: 0;
+    transition: var(--transition);
+}
+
+/* Aplica estilos al elemento "pseudo" ::after solo cuando el cursor del mouse pasa por encima del enlace (:hover). Es una forma de aplicar un efecto visual, como una línea o un icono */
+.nav-menu ul li a:hover::after {
+    width: 100%;
+}
+
+/* Estilos Para la ( Hamburguesa ) Solo En Movil Oculto en PC */
+.menu-toggle {
+    display: none; /* significa que el elemento se elimina por completo de la página y del flujo del documento, haciendo que no sea visible y no ocupe ningún espacio */
+    color: var(--blanco-claro-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* Estilos para La Clase imagen-principal Del Contenido ( PORTADA DE INICIO ) */
+.imagen-principal {
+    height: 100vh; /* establece que un elemento debe tener una altura igual al 100% de la altura de la ventana gráfica (viewport) del navegador, es decir, que ocupará toda la altura visible de la pantalla */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(imagenes/imagen-principal-css/logo1.png) no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--blanco-claro-color);
+    padding-top: 80px;
+}
+
+/* Estilos Para el Contenedor ( div class="imagen-principal-contenido"> </div> ) */
+.imagen-principal-contenido {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estlos para la Etiqueta ( h2 ) de Este Contenedor " </div> " con Esta clase */
+.imagen-principal-contenido h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--blanco-claro-color);
+}
+
+/* Estlos para la Etiqueta ( p ) de Este Contenedor " </div> " con Esta clase */
+.imagen-principal-contenido p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+
+/* Estilos Para la Seccion de Servicios */
+.servicio {
+    padding: 80px 0; /* Espacio Arriba y Abajo, Izquierda y Derecha */
+    background-color: var(--blanco-claro-color);
+}
+
+/* =================================== REVISAR CUANDO SE ELABORE EL ( DOM ) CON JavaScritps ===============================*/
+
+/* Estilo para Los servicios se cargarán dinámicamente desde script.js ( <div class="servicios-grid </div> " */
+.servicios-grid {
+    display: grid; /*  convirtiendo a sus hijos directos en elementos de cuadrícula que se pueden organizar en filas y columnas */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* El resultado es que se crean tantas columnas de mínimo 300px de ancho como quepan en la pantalla. Si hay espacio extra, este se distribuye equitativamente entre las columnas para ocupar todo el ancho disponible (gracias a 1fr), pero las columnas siempre mantendrán su tamaño mínimo de 300px. */
+    gap: 30px; /* Es una propiedad abreviada que define el row-gap (espacio entre filas) y el column-gap (espacio entre columnas) con el mismo valor. */
+}
+
+/* Estilos para las Tarjetas Dinamicas Con El ( DOM JavaScritps ) */
+.servicios-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden; /*  todo el contenido que exceda los límites de un elemento contenedor será ocultado y cortado */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+/* Estilos Con  " Efectos Interactivos " para las Tarjetas */
+.servicios-card:hover {
+    transform: translateY(-10px); /* moverá un elemento 10px hacia la derecha. translateX() se parece a la propiedad left cuando se aplica a un elemento position: relative */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /*  capacidad de añadir uno o varios efectos de sombra alrededor del borde de un elemento HTML, simulando profundidad y realismo */
+}
+
+/* Estilos para Las Imagenes De las Tarjetas CARD */
+.servicios-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+/* Estilo para La Imagen de la Card */
+.servicios-img img {
+    width: 100%;
+    /*height: 100%;*/
+    object-fit: cover; /* significa que el contenido de un elemento (como una imagen o video) se redimensiona para llenar completamente su contenedor manteniendo su relación de aspecto, aunque esto pueda hacer que partes del contenido queden recortadas */
+    transition: var(--transition);
+}
+
+.servicios-card:hover .servicios-img img {
+    transform: scale(1.1);
+}
+
+.servicios-informacion {
+    padding: 20px;
+}
+
+.servicios-informacion h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--segundo-color);
+}
+
+.servicios-informacion p {
+    color: var(--gris-color);
+    margin-bottom: 15px;
+}
+
+.servicios-precios {
+    font-weight: 700;
+    color: var(--primer-color);
+    font-size: 1.2rem;
+}
+/* ========================= HASTA AQUI. ESTA PARTE SE REVISA FUNCIONAMINETO EN GENERAL CUANDO SE CREE EL DOM */
+
+
+/* Estilos Para la ( Seccio de GALERIA ) Se Muestran Dinamicamente des el DOM */
+.galeria-img {
+    padding: 80px 0;
+    background-color: var(--gris-claro-color);
+}
+
+.galeria-grid {
+    display: grid; /*  convirtiendo a sus hijos directos en elementos de cuadrícula que se pueden organizar en filas y columnas */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* El resultado es que se crean tantas columnas de mínimo 300px de ancho como quepan en la pantalla. Si hay espacio extra, este se distribuye equitativamente entre las columnas para ocupar todo el ancho disponible (gracias a 1fr), pero las columnas siempre mantendrán su tamaño mínimo de 300px. */
+    gap: 20px;  /* Es una propiedad abreviada que define el row-gap (espacio entre filas) y el column-gap (espacio entre columnas) con el mismo valor. */
+}
+
+/* ***** RECORDAR QUE ESTAS ( 3 ) PROPIEDADES DE CLASES ( .galeria-item ) SE ( CREAN ) DINAMICAMENTE DESDE EL " DOM JavaScritps " ***** */
+.galeria-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 250px;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* significa que el contenido de un elemento (como una imagen o video) se redimensiona para llenar completamente su contenedor manteniendo su relación de aspecto, aunque esto pueda hacer que partes */
+    transition: var(--transition);
+}
+
+.galeria-item:hover img {
+    transform: scale(1.1); /* aumenta el tamaño de un elemento en un 10% tanto en el eje horizontal (\(X\)) como en el vertical (\(Y\)). La propiedad transform permite aplicar diversas transformaciones, como escalar, rotar, trasladar o sesgar un elemento */
+}
+
+
+/* Estolos Para la Clase Secion About  */
+.about {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.about-contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-contenedor p {
+    margin-bottom: 20px;
+    color: var(--gris-color);
+}
+
+/* ***** RECORDAR QUE ESTA PROPIEDADES DE CLASES DE ( .equipo-miembro-img ) SE ( CREAN ) DINAMICAMENTE DESDE EL " DOM JavaScritps " ***** */
+/* Estlos Generales Para Mostrar el EQUIPO Desde El DOM Elegante y Moderno */
+.equipo {
+    margin-top: 50px;
+}
+
+.equipo h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.equipo-miembros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.equipo-miembro {
+    text-align: center;
+}
+
+.equipo-miembro-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 5px solid var(--gris-claro-color);
+}
+
+.equipo-miembro-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.equipo-miembro h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.equipo-miembro p {
+    color: var( --gris-color);
+    font-style: italic;
+}
+
+
+/* Estilos Generales Para Seccion De Contacto */
+.contactos {
+    padding: 80px 0;
+    background-color: var(--blanco-claro-color);
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 50px;
+}
+
+.contacto-info {
+    padding: 30px;
+    background-color: var(--segundo-color);
+    color: var(--blanco-claro-color);
+    border-radius: 8px;
+}
+
+.contacto-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primer-color);
+}
+
+.contacto-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contacto-info i {
+    margin-right: 10px;
+    color: var(--primer-color);
+    width: 20px;
+    text-align: center;
+}
+
+/* Estlos Generales para Los Iconos De las Redes Sociales De la Informacion*/
+.social-links {
+    display: flex;
+    margin: 20px 0;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--primer-color);
+    color: var(--segundo-color);
+}
+
+/* Estlos Generales para El Horario De la Informacion*/
+.horario {
+    margin-top: 30px;
+}
+
+.horario h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primer-color);
+}
+
+/* Estlos para el " div " que es el Contenedor General de El Formulario de Contactos de la Reserva*/
+.contacto-form {
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contacto-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--segundo-color);
+}
+
+
+/* =========================================================================================================================================
+                            ESTILOS PARA EL MODAL  DEL LOGIN DEL ADMINISTRADOR
+============================================================================================================================================= */
+.login-modal {
+    position: fixed; /* hace que un elemento se fije en una posición específica de la ventana del navegador, sin importar si el usuario se desplaza por la página. */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;   /*  se usa generalmente para asegurar que ese elemento aparezca siempre en primer plano, delante de otros elementos con z-indexmás bajos */
+    backdrop-filter: blur(5px); /* aplica un efecto de desenfoque gaussiano de 5 píxeles solo a la parte del contenido que se encuentra detrás de un elemento, haciendo que ese fondo se vea borroso */
+}
+
+.login-modal-contenido {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: aparecer 0.3s ease; /* propiedades de animación, donde apereceres el nombre de la animación, 0.3ses la duración de un ciclo completo y easedefine la curva de velocidad, haciendo que la animación comience lentamente, acelere y luego disminuya al fina */
+}
+
+.seccion-titilo {
+    color: var(--primer-color);
+    margin-bottom: 10px;
+}
+
+/* =====================================================================================================
+ Define una animación llamada aparecer que:
+ -------------------------------------------------------------------------------------------------------
+    - Empieza (from) con el elemento más pequeño (scale(0.8)) y completamente transparente (opacity: 0).
+    - Termina (to) con el elemento en su tamaño normal (scale(1)) y totalmente visible (opacity: 1).
+======================================================================================================== */
+@keyframes aparecer {
+    form { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    color:  var(--gris-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cerrar-modal:hover {
+    color: rgba(255, 0, 0, 0.623);
+}
+
+/* IMPORTANTE :  Esta Propiedad se Manipula Desde el Archivo script.js Por Medio Del DOM  */
+.oculto {
+    display: none; /* CONTROLA QUE EL MODAL SE OCULTE POR DEFECTO Y APARECA AL PRESIONAR EL BOTON Admin CON EL DOM */
+} 
+
+.login-modal-contenido .form-grupo input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gris-claro-color);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-family: var(--fuente-primaria);
+    transition: var(--transition);
+}
+
+.login-modal-contenido .btn {
+    width: 100%;
+}
+/* ========================================================================================================================== */
+
+
+
+/* Estlos para el <div class="form-grupo"> que es el que Contiene los Input del Formulario */
+.form-grupo {
+    margin-bottom: 20px;
+}
+
+/* Estilos para el Grupo de Input */
+.form-grupo input,
+.form-grupo select,  /* Asi se Pueden Seleccionar Varias Etiquetas que Necesiten los Mismos Estilos  */
+.form-grupo textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gris-claro-color);
+    border-radius: 4px;
+    font-family: var(--fuente-primaria);
+    transition: var(--transition);
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,       /* :focus se activa cuando el usuario hace clic, toca o usa la tecla Tab */
+.form-grupo textarea:focus {
+    outline: none;              /* Elimina el contorno que aparece alrededor de un elemento cuando recibe el foco, como al hacer clic en un campo de texto o al navegar con el teclado */
+    border-color: var(--primer-color); /* Se le Asigna un Color Al Foco */
+}
+
+.form-grupo textarea {
+    min-height: 120px; /* Establece la altura mínima de un elemento a \(120\) píxeles. */
+    resize: vertical;  /* permite al usuario cambiar el tamaño de un elemento únicamente en su altura (verticalmente). */
+}
+
+
+/* Estilos para Todo el Contenedor Footer */
+footer {
+    background-color: var(--segundo-color);
+    color: var(--blanco-claro-color);
+    padding: 50px 0 0;
+}
+
+.footer-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo h3 {
+    font-size: 1.8rem;
+    color: var(--blanco-claro-color);
+    margin-bottom: 10px;
+}
+
+.footer-logo span {
+    color: var(--primer-color);
+}
+
+.footer-logo p {
+    color: var(--gris-color);
+}
+
+/* Estilos Para Los Links del Footer ( Etiqueta <a href="#inicio" > </a> ) */
+.footer-links h4 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--primer-color);
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a:hover {
+    color: var(--primer-color);
+}
+
+.footer-hoja-informativa h4 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--primer-color);
+}
+
+.footer-hoja-informativa p {
+    margin-bottom: 15px;
+    color: var(--gris-color);
+}
+
+.footer-hoja-informativa form {
+    display: flex;
+}
+
+.footer-hoja-informativa input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-family: var(--fuente-primaria);
+}
+
+.footer-hoja-informativa button {
+    padding: 0 15px;
+    background-color: var(--primer-color);
+    color: var(--segundo-color);
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.footer-hoja-informativa button:hover {
+    background-color: #c5a227;
+}
+
+.footer-boton {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gris-color);
+    font-size: 0.9rem;
+}
+
+/* Responsividad Del Diseño para Este Rango de Pantalla */
+/* aplica los estilos que contiene solo cuando el ancho de la ventana gráfica es de 1200 píxeles o menos */
+@media (max-width: 1200px) { 
+    .contenedor {
+        max-width: 1000px;
+    }
+    
+    .imagen-principal-contenido h2 {
+        font-size: 3.5rem;
+    }
+}
+/* aplica los estilos que contiene solo cuando el ancho de la ventana gráfica es de 992 píxeles o menos */
+@media (max-width: 992px) {
+    .contenedor {
+        max-width: 800px;
+    }
+    
+    .imagen-principal-contenido h2 {
+        font-size: 3rem;
+    }
+    
+    .seccion-titulo {
+        font-size: 2.2rem;
+    }
+}
+
+/* aplica los estilos que contiene solo cuando el ancho de la ventana gráfica es de 768 píxeles o menos */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-menu ul {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--segundo-color);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        transition: var(--transition);
+    }
+    
+    .nav-menu ul.active {
+        left: 0;
+    }
+    
+    .nav-menu ul li {
+        margin: 15px 0;
+    }
+    
+    .imagen-principal-contenido h2 {
+        font-size: 2.5rem;
+    }
+    
+    .imagen-principal-contenido p {
+        font-size: 1rem;
+    }
+    
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* aplica los estilos que contiene solo cuando el ancho de la ventana gráfica es de 576 píxeles o menos */
+@media (max-width: 576px) {
+    .imagen-principal-contenido h2 {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+    }
+    
+    .seccion-titulo {
+        font-size: 1.8rem;
+    }
+    
+    /* Selecciono 3 Clases en Conjunto para Plicar Estilo Responsivo */
+    .servicios-grid, .galeria-grid, .equipo-miembros {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-contenedor {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-hoja-informativa form {
+        flex-direction: column;
+    }
+    
+    .footer-hoja-informativa input {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-hoja-informativa button {
+        border-radius: 4px;
+        padding: 12px;
+    }
+}

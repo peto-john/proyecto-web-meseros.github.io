@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meseros JYS - Compromiso y Tradición</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- LIBRERIA WEB DE ICONOS ( HAMBURGUESA Y MAS ) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet"> <!-- LIBRERIA WEB DE TIPO DE LETRA -->
+</head>
+
+<body>
+    <!-- BARRA SUPERIOR DE LA PAGINA  " ESTATICA " Y SE OCULTA EN ( MOVILES )   -->
+    <header>
+    <div class="contenedor">
+        <div class="logo">
+            <h1>Meseros<span>JYS</span></h1>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#" id="admin-link">Admin</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i> <!-- Clase ( icono ) de la librería de iconos Font Awesome que representa un menú de navegación (" Hamburguesa ") -->
+            </div>
+        </nav>
+    </div>
+    </header>
+
+    <!-- SESION PARA LA PORTADA DE INICIO -->
+    <section id="inicio" class="imagen-principal">
+        <div class="imagen-principal-contenido">
+            <h2>Compromiso y Tradición</h2>
+            <p>La mejor experiencia en atención al cliente</p>
+            <a href="#contacto" class="btn">Reserva tu cita</a>
+        </div>
+    </section>
+
+    <!-- SESION PARA MOSTRAR LOS SERVICIOS DINAMICAMENTE DESDE EL " DOM " -->
+    <section id="servicios" class="servicio">
+        <div class="contenedor">
+            <h2 class="seccion-titulo">Nuestros Servicios</h2>
+            <div class="servicios-grid" id="servicios-contenedor"> <!-- ( id ) PARA MANIPULAR CON EL DOM ( EN ESPAÑOL ( Modelo de Objetos del Documento ) CON JavaScript ) -->
+                <!-- Los servicios se cargarán dinámicamente AQUI. desde script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SESION PARA MOSTRAR LAS IMAGENES DINAMICAMENTE DESDE EL " DOM " -->
+    <section id="galeria" class="galeria-img">
+        <div class="contenedor">
+            <h2 class="seccion-titulo">Galería de Trabajos</h2>
+            <div class="galeria-grid" id="galeria-contenedor"> <!-- ( id ) PARA MANIPULAR CON EL DOM ( EN ESPAÑOL ( Modelo de Objetos del Documento ) CON JavaScript ) -->
+                <!-- Las imágenes de la galería se cargarán dinámicamente AQUI. desde script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SESION PARA HABLAR DE NOSOTROS. LAS IMAGENES DEL EQUIPO SE CARGAN DINAMICAMENTE DESDE EL " DOM " -->
+    <section id="nosotros" class="about"> <!-- El termino " about " Se Refiere Generalmente A " Quines Somos " O " Acerca de ... "  -->
+        <div class="contenedor">
+            <div class="about-contenedor">
+                <h2 class="seccion-titulo">Sobre Nosotros</h2>
+                <p>Meseros JYS nació por la pasión y tradicion de nuestra familia de atender con amabilidad a todas las personas que nos rodean y nos visitan. Nuestros Meseros certificados tienen años de experiencia en Atencion al cliente para cada Evento en Particular.</p>
+                <p>Nos enorgullecemos de ofrecer un Servicio de calidad donde cada cliente recibe atención personalizada y servicios de la más alta calidad.</p>
+                <div class="equipo">
+                    <h3>Nuestro Equipo</h3>
+                    <div class="equipo-miembros" id="equipo-contenedor"> <!-- ( id ) PARA MANIPULAR CON EL DOM ( EN ESPAÑOL ( Modelo de Objetos del Documento ) CON JavaScript ) -->
+                        <!-- El equipo se cargará dinámicamente AQUI. desde script.js -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SESION  CONTACTO. LAS OPCIONES SE CARGAN DINAMICAMENTE DESDE EL " DOM " -->
+    <section id="contacto" class="contactos">
+        <div class="contenedor">
+            <h2 class="seccion-titulo">Contacto</h2>
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <h3>Información</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Ciudad</p> <!-- Clase ( icono ) de la librería de iconos Font Awesome que representa el Icono de (" Ubicacion ") -->
+                    <p><i class="fas fa-phone"></i> +57 322 588 3831</p>                     <!-- Clase ( icono ) de la librería de iconos Font Awesome que representa el Icono de (" Telefono ") -->
+                    <p><i class="fas fa-envelope"></i> mesero@hotmail.com</p>                <!-- Clase ( icono ) de la librería de iconos Font Awesome que representa el Icono de (" Carta/Email ") -->
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>                    <!-- Clase ( icono ) de la librería de iconos Font Awesome que representa el Icono de (" facebook ") -->
+                        <a href="#"><i class="fab fa-instagram"></i></a>                     <!-- Clase ( icono ) de la librería de iconos Font Awesome que representa el Icono de (" instagram ") -->
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>                       <!-- Clase ( icono ) de la librería de iconos Font Awesome que representa el Icono de (" whatsapp ") -->
+                    </div>
+                    <div class="horario">
+                        <h4>Horario</h4>
+                        <p>Lunes - Domingo: 00:00 - 11:59</p>
+                        <p>Atencion Todos Los Dias</p>
+                    </div>
+                </div>
+                <div class="contacto-form">
+                    <h3>Reserva tu cita</h3>
+                    <form id="cita-form">
+                        <div class="form-grupo">
+                            <input type="text" id="nombre" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-grupo">
+                            <input type="email" id="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-grupo">
+                            <input type="tel" id="telefono" placeholder="Teléfono" required>
+                        </div>
+                        <div class="form-grupo">
+                            <select id="servicio" required>  <!-- ( id ) PARA MANIPULAR CON EL DOM ( EN ESPAÑOL ( Modelo de Objetos del Documento ) CON JavaScript ) -->
+                                <option value="">Selecciona un servicio</option>
+                                <!-- Las opciones se cargarán dinámicamente AQUI. desde script.js -->
+                            </select>
+                        </div>
+                        <div class="form-grupo">
+                            <input type="date" id="fecha" required>
+                        </div>
+                        <div class="form-grupo">
+                            <textarea id="mensage" placeholder="Mensaje adicional"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Reservar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--  =======================================================================================================   
+            MODAL DE INICIO DE SESION DEL  ADMINISTRADOR
+          -------------------------------------------------------------------------------------------------------
+          - Permite al Administrador Autenticarse con Usuario y Contraseña.
+          - ( Se Activa al Presionar el Boton " Admin " del Menu )
+    =============================================================================================================  -->
+    <div id="login-modal" class="login-modal oculto">
+        <div class="login-modal-contenido">
+            <span class="cerrar-modal" id="cerrar-login">&times;</span>
+            <h2 class="seccion-titilo">Inicie Sesion</h2>
+            <form id="login-form">
+                <div class="form-grupo">
+                    <input type="text" id="usuario" placeholder="Usuario" required>
+                </div>
+                <div class="form-grupo">
+                    <input type="password" id="contraseña" placeholder="Contraseña" required>
+                </div>
+
+                <button type="submit" class="btn">Ingresar</button>
+
+            </form>
+        </div>
+        
+    </div>
+   
+
+
+    <footer>
+        <div class="contenedor">
+            <div class="footer-contenedor">
+                <div class="footer-logo">
+                    <h3>Meseros<span>JYS</span></h3>
+                    <p>Compromiso y Dedicacion desde 2022</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hoja-informativa">
+                    <h4>Hoja Informativa</h4>
+                    <p>Suscríbete para recibir promociones</p>
+                    <form id="hoja-informativa-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>  <!-- Clase ( icono ) de la librería de iconos Font Awesome que representa el Icono de (" Enviar ") -->
+                    </form>
+                </div>
+            </div>
+            <div class="footer-boton">
+                <p>&copy; 2025 Meseros JYS. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="db_estatica.js"></script>      <!-- LLAMADO AL DOCCUMENTO JAVASCRIPT -->
+    <script src="script.js"></script>  <!-- LLAMADO AL DOCCUMENTO JAVASCRIPT -->
+</body>
+</html>
