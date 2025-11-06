@@ -3,53 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Administrativo - Meseros JYS</title>
-    <link rel="stylesheet" href="styles.css">  <!-- CSS GENERAL DEL SITIO -->
-    <link rel="stylesheet" href="panel.css">   <!-- CSS EXCLUSIVO DEL PANEL -->
+    <title>Panel del Administrador - Meseros JYS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="panel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- LIBRERIA WEB DE ICONOS ( HAMBURGUESA Y MAS ) -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet"> <!-- LIBRERIA WEB DE TIPO DE LETRA -->
 </head>
-
 <body>
-    
-    <!--============================================================ 
-                 PANEL ADMINISTRATIVO DE MESEROS JYS
-        ============================================================ -->
-    
-    <header>
-        <div class="contenedor panel-header">
-            <h1>PANEl ADMIN - MESEROS JYS</h1>
-            <button class="btn" id="cerrar-sesion">Cerrar Sesion</button>
-        </div>
-    </header>
 
-    <main class="contenedor panel-main">
-        <h2 class="seccion-titilo">Gestion De Reservas</h2>
-        <p>Aqui Podras Gestionar las Reservas, Asignar Meseros en el Equipo de Trabajo etc.</p>
+    <!-- ============ CONTENEDOR PRINCIPAL ============ -->
+    <div class="panel-container">
 
-        <!-- Tabla para Mostrar las Reservas ( ESTATICA ) -->
-        <div class="tabla-reservas">
-            <table id="tabla-reservas">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Correo</th>
-                        <th>Telefono</th>
-                        <th>Servicio</th>
-                        <th>Fecha</th>
-                        <th>Accion</th>
-                    </tr>
-                </thead>
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2>Meseros <span>JYS</span></h2>
+            </div>
+            <nav class="menu">
+                <a href="#" class="active"><i class="fas fa-calendar-alt"></i> Reservas</a>
+                <a href="#"><i class="fas fa-concierge-bell"></i> Servicios</a>
+                <a href="#"><i class="fas fa-users"></i> Equipo</a>
+                <a href="#"><i class="fas fa-images"></i> Galería</a>
+            </nav>
+            <button id="cerrar-sesion" class="btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+            </button>
+        </aside>
 
-                <tbody>
-                    <!-- LAS FILAS SE CARGARAN DINAMICAMENTE CON JS POR MEDIO DEL DOM -->
-                </tbody>
+        <!-- ===== CONTENIDO ===== -->
+        <main class="main-content">
 
-            </table>
-            
-        </div>
-    </main>
+            <!-- HEADER SUPERIOR -->
+            <header class="topbar">
+                <button id="toggle-menu" class="toggle-menu"><i class="fas fa-bars"></i></button>
+                <h1>Panel de Control</h1>
+            </header>
 
+            <!-- SECCIÓN DE RESERVAS -->
+            <section class="dashboard-section">
+                <h2>Gestión de Reservas</h2>
+                <p>Visualiza y elimina reservas registradas desde el sitio principal.</p>
+
+                <div class="table-container">
+                    <table id="tabla-reservas">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Teléfono</th>
+                                <th>Servicio</th>
+                                <th>Fecha</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="panel.js"></script>
+</body>
+</html>
     
     <script src="panel.js"></script>  <!-- LLAMADO AL DOCCUMENTO JAVASCRIPT ( panel.js ) -->
 
