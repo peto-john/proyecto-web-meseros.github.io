@@ -133,16 +133,33 @@ function cargarServicioSeleccionado() {
 function manejarEnvioFormulario(e) {
     e.preventDefault();// PREVIENE EL ENVIO POR DEFECTO DEL NAVEGADOR AL PRESIONAR EL BOTON ENVIAR
     // EN ESTAS VARIABLES/CONSTANTES SE RECUPERAN LOS VALORES QUE ESCRIBE EL USUARIO POR CADA UNO DE LOS Input del Formulario
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const telefono = document.getElementById('telefono').value;
-    const servicio = document.getElementById('servicio').value;
-    const fecha = document.getElementById('fecha').value;
-    const mensage = document.getElementById('mensage').value;
-    
-    // Aquí normalmente haríamos una petición AJAX para enviar los datos al servidor
-    // Por ahora solo mostraremos un mensaje de éxito
-    
+    const nombre = document.getElementById('nombre').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const servicioId = parseInt(document.getElementById('servicio').value.trim()); // GUARDA EL NUEMRO COMO ID REFERENCIA PARA BUSCAR EL NOMBRE
+    const fecha = document.getElementById('fecha').value.trim();
+    const mensage = document.getElementById('mensage').value.trim();
+
+    // BUSCAR EL NOMBRE DEL SERVICIO SEGUN SU ID SELECCIONADO
+    // LA VARIABLE " SERVICIOS " VIENE DE db_estatica.js Y ES LA QUE CONTIENE TODOS LOS NOMBRES DE LOS SERVICIOS
+    const serVicioSeleccionado = servicios.find(s => s.id === servicioId);
+    const nombreServicio = serVicioSeleccionado ? serVicioSeleccionado.nombre : 'Servicio Desconocido';
+
+    // CREAR UN OBJETO RESERVAS PARA ENVIAR LOS DATOS AL localStorage ( Simulacion de una DB )
+    const nuevaReserva = { nombre, email, telefono, servicio : nombreServicio, fecha };
+
+    // GUARDAR LOS DATOS RECIBIDOS EN localStorage ( Simulacion de una DB )
+    let reservas = JSON.parse(localStorage.getItem('reservas')) || [];
+    reservas.push(nuevaReserva);
+    localStorage.setItem('reservas', JSON.stringify(reservas));
+
+    /* 
+        NOTA IMPOSTANTE:
+     ---------------------------------------------------------------------------------------------------------------
+        - Aquí normalmente haríamos una petición AJAX O FETCH para enviar los datos al servidor
+        - Por ahora solo mostraremos un mensaje de éxito y los datos se guardan en una db Simulada con localStorage
+    */
+
     alert(`Gracias ${nombre}, tu cita ha sido reservada. Te esperamos el ${fecha}.`);
     
     // Resetear el formulario
