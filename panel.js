@@ -21,7 +21,8 @@ function amburguesaPanel() {
     })
 
     document.querySelectorAll('.menu a').forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
             sidebar.classList.remove('show');
         })
     });
