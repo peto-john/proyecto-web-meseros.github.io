@@ -12,27 +12,21 @@
 
 
 function amburguesaPanel() {
+
     const menuBtn = document.getElementById('toggle-menu');
     const sidebar = document.getElementById('sidebar');
 
-    if (!menuBtn || !sidebar) return;
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.add('show');
+    })
 
-    // Maneja click y touch para compatibilidad móvil
-    ['click', 'touchstart'].forEach(evt => {
-        menuBtn.addEventListener(evt, e => {
-            e.preventDefault();
-            sidebar.classList.toggle('show');
-        });
-    });
-
-    // Cerrar el menú al hacer clic en un enlace del sidebar
     document.querySelectorAll('.menu a').forEach(link => {
-        ['click', 'touchstart'].forEach(evt => {
-            link.addEventListener(evt, e => {
-                e.preventDefault();
-                sidebar.classList.remove('show');
-            });
-        });
+
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            sidebar.classList.remove('show');
+        })
     });
 }
 
