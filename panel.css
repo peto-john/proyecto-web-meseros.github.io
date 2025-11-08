@@ -178,6 +178,7 @@ tbody tr:hover {
     }
     .toggle-menu {
         display: block;
+        z-index: 9999;
     }
     .sidebar {
         transform: translateX(-100%);
