@@ -78,7 +78,7 @@ const galeriaImagenes = [
 // Miembros del equipo Con Imagenes   // Sintaxis De Constantes En Lower Camel Case: La primera palabra empieza con minúscula y las subsiguientes con mayúscula. Ejemplo: variableNumeroUno
 const miembrosEquipo = [
     {
-        nombre: "Stefanya Echeverry",
+        nombre: "Stefanni Echeverry",
         cargo: "Cordinadora",
         imagenEquipo: "imagenes/imagenes-miembrosEquipo/usuarioVacio.jpg" // FOTO DE CADA MIEMBRO DEL EQUIPO
     },
